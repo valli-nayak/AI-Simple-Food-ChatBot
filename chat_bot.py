@@ -3,8 +3,18 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
 import streamlit as st
+import os
 
 load_dotenv()
+
+if not os.getenv("GOOGLE_API_KEY"):
+    st.error("❌ Missing GOOGLE_API_KEY in the environment setup.")
+    st.stop()
+
+if not os.getenv("LANG_CHAIN_API_KEY"):
+    st.error("❌ Misiing LANG_CHAIN_API_KEY in the environment setup.")
+    st.stop()
+
 
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 st.title("🍲 Food AI Assistant\n Ask me anything about food! If you ask about something else, I'll let you know I don't know.")
