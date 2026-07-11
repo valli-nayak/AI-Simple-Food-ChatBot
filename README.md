@@ -13,4 +13,4 @@ LANGCHAIN_API_KEY="<YOUR_API_KEY>"
 
 How to run Streamlit applications ?.
 Open terminal and type:
-streamlit run <project-name>
+`streamlit run <project-name>`
